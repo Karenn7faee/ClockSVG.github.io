@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG Clock</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Clock made with SVG</h1>
+        <h2>Author : Karen-Fae Laurin</h2>
+    
+
+        <div class="flex-container">
+            <div class="flex2">
+      
+              <h1>Weather Clock</h1>
+  
+              <svg id="TheClock" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:80%; height:auto;background-color: black;" viewBox="0  0 400 400">
+      
+                  
+                  <!-- decorative stars -->
+                  <polygon id="star1" points="260,20 265,20 267,15 269,20 274,20 270,23.5 270,28 267,25.5 263,28 264,23.5" rx="5" style="fill:yellow;stroke:none;" />
+      
+                  <polygon id="star2" points="130,10 135,10 137,5 139,10 144,10 140,13.5 140,18 137,15.5 133,18 134,13.5" rx="5" style="fill:yellow;stroke:none;" />
+      
+                  <polygon id="star3" points="30,110 35,110 37,105 39,110 44,110 40,113.5 40,118 37,115.5 33,118 34,113.5" rx="5" style="fill:yellow;stroke:none;" />
+      
+                  <polygon id="star4" points="330,90 335,90 337,85 339,90 344,90 340,93.5 340,98 337,95.5 333,98 334,93.5" rx="5" style="fill:yellow;stroke:none;" />
+      
+                  <!-- moon -->
+                  <circle id="moon" cx="350" cy="45" r="21" style="fill:Cornsilk;stroke:none;"/>
+                  
+                  <circle id="crescent" cx="315" cy="45" r="20" style="fill:black;fill-opacity:1;stroke:none;"/>
+                  
+                  <!-- sunrise and sunset -->
+                  <path id="sunHours" fill="lightblue" stroke="none"/>
+  
+                  <!-- sun -->
+                  <circle id="sunBeam" cx="50" cy="350" r="30" style="fill:yellow;stroke:none;">
+                      <animate attributeName="opacity" from="1" to="0" dur="3s" repeatCount="indefinite" />
+                      <animate attributeName="r" attributeType="XML" from="30"  to="50" begin="0s" dur="3s" repeatCount="indefinite"/>
+                  </circle>
+      
+                  <circle id="sun" cx="50" cy="350" r="30" style="fill:yellow;fill-opacity:1;stroke:none;"/>
+      
+      
+                  <!-- The clock and its components -->
+                  <circle id="contour" cx="200" cy="200" r="150" style="fill:darkgray;stroke:white;stroke-width:5;"/>
+      
+                  <rect id="messageTextbox" x="120" y="170" width="160" height="75" rx="15" style="fill:lightskyblue;fill-opacity:0.5;stroke:none;" />
+      
+                  <path id="textPathJSON" d="M 125 210 L 275 210" stroke="none"/>
+      
+                  <text style="font: 20px sans-serif; fill:white;">
+                      <textPath id="textJSON" href="#textPathJSON" startOffset="0">ʕ•ᴥ•ʔ<animate attributeName="startOffset" values="0%;70%;0%" dur="10s" repeatCount="indefinite"/>
+                      </textPath>
+                  </text>
+      
+                  <text id="weekDay" x="170" y="130" fill="white"></text>
+                  <text id="todayDate" x="170" y="150" fill="white"></text>
+      
+                  <g id="weather"></g>
+      
+                  <g id="hours"></g>
+      
+                  <g id="minutes">
+                      <text id="minsClock"></text>
+                      <animate
+                      attributeName="opacity" 
+                      values="0.4;1;0.4"
+                      keyTimes="0;0.5;1"
+                      dur="5s" 
+                      begin="0s"
+                      repeatCount="indefinite" 
+                      />
+                  </g>
+      
+                  <g id="secondes"><text id="secsClock"></text></g>
+      
+                  <path id="hourArrow" d="M 185 30 L 215 30  L 200 65 z" fill="green" stroke="white" stroke-width="2" transform="rotate(0 200 200)" />
+      
+              </svg>
+  
+            </div>
+              
+            <div id="legend" class="flex1">
+              <h2>Weather Legend</h2>
+              <table>
+                  <tr>
+                      <td id="cercle1"><svg width="20" height="20" viewBox="0  0 20 20"><circle r="10" cx="10" cy="10" fill="yellow" stroke="none"/></svg></td>
+                      <td>Clear Weather</td>
+                  </tr>
+                  <tr>
+                      <td id="cercle2"><svg width="20" height="20" viewBox="0  0 20 20"><circle r="10" cx="10" cy="10" fill="gray" stroke="none"/></svg></td>
+                      <td>Clouds</td>
+                  </tr>
+                  <tr>
+                      <td id="cercle3"><svg width="20" height="20" viewBox="0  0 20 20"><circle r="10" cx="10" cy="10" fill="aquamarine" stroke="none"/></svg></td>
+                      <td>Drizzle</td>
+                  </tr>
+                  <tr>
+                      <td id="cercle4"><svg width="20" height="20" viewBox="0  0 20 20"><circle r="10" cx="10" cy="10" fill="PaleTurquoise" stroke="none"/></svg></td>
+                      <td>Rain</td>
+                  </tr>
+                  <tr>
+                      <td id="cercle5"><svg width="20" height="20" viewBox="0  0 20 20"><circle r="10" cx="10" cy="10" fill="white" stroke="black" stroke-width="1"/></svg></td>
+                      <td>Snow</td>
+                  </tr>
+                  <tr>
+                      <td id="cercle6"><svg width="20" height="20" viewBox="0  0 20 20"><circle r="10" cx="10" cy="10" fill="plum" stroke="none"/></svg></td>
+                      <td>Thunderstorm</td>
+                  </tr>
+                  <tr>
+                      <td id="cercle7"><svg width="20" height="20" viewBox="0  0 20 20"><circle r="10" cx="10" cy="10" fill="PeachPuff" stroke="none"/></svg></td>
+                      <td>Miscellaneous Weather</td>
+                  </tr>
+              </table>
+            </div>
+      
+          </div> <!-- end div flex --> 
+
+          
+        <p>This SVG clock was the final project givin in the class "IFT1005 - Design Web - 2022" at Université de Montréal. This clock shows the time and the weather of the next 24 hour for the University coordinates. It also displays the time of sunrise and sunset, as well as displays the current moon phase. This application is made with SVG and JS.<br/>
+        <br/>
+        The hour is pointed by the green arrow rotating around the clock. 
+        The minutes are shown by the slightly changing opacity green number. The seconds are constantly moving around the inner ring of the clock.<br/>
+        <br/>
+        The weather forecast and sun/moon information are provided by Open Weather Map - One Call API (click to consult the <a target="_blank" href="https://api.openweathermap.org/data/2.5/onecall?lat=45.5028&lon=-73.608&units=metric&lang=fr8&&appid=0823cec7978ea2d7bd4f3bc0b3bb71f6">JSON</a> or the <a target="_blank" href="https://openweathermap.org/api/one-call-3">API documentation</a>). The colors follow the legend provided for the weather forecast in the next 24 hours.<br/>
+        <br/>
+        For the exact time for sunrise and sunset or the exact moon phase consult the console screen. Moon phase 0 and 1 are 'new moon', 0.25 is 'first quarter moon', 0.5 is 'full moon' and 0.75 is 'last quarter moon'.<br/>
+        <br/>
+        Stars and sun were made in SVG and are purely decorative.<br/>
+        <br/>
+        Last modified after teacher's grading. Changes were made to how the time was synchronized (too many setInterval() were used). <br/>
+        A friend pointed out that the moon phase wasn't implemented following real life standard, so corrections were made to the moon display.
+        Code was translated from french to english.<br/>
+        <br/>
+        Final update May 24 2024 - new subscription plan needed and updated API key.
+        </p>
+    
+     
+      </div>   <!-- end div container -->   
+        
+    
+        <script src="mainJS.js"></script>
+    
+</body>
+</html>

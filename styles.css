@@ -1,0 +1,35 @@
+/* 
+Author : Karen-Fae Laurin
+stylesheets for SVG Clock index.html
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body { text-align: center;}
+
+
+div { padding: 3vw; }
+
+@media (max-width: 1000px) {
+    .flex-container {flex-direction: column;}
+}
+
+.flex-container { display: flex; padding: 0;}
+.flex2 { flex-grow: 2;}
+.flex1 { flex-grow: 1;}
+
+.flex-container {align-items: center;}
+
+#legend h2{text-align: left;}
+
+table,tr,td {text-align: left; font-size: 1.1em;}
+
+
+p {
+    padding: 3vw 15vw;
+    text-align: justify;
+    font-size: 1.5em;
+}
